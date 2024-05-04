@@ -1,0 +1,116 @@
+body {
+    font-family: 'Montserrat';
+    margin: 0;
+    padding: 0;
+    /* background: linear-gradient(135deg, #667eea 0%, #5b4670 100%); */
+    background-image: linear-gradient(200deg, rgba(171, 171, 171,0.05) 0%, rgba(171, 171, 171,0.05) 23%,rgba(90, 90, 90,0.05) 23%, rgba(90, 90, 90,0.05) 48%,rgba(65, 65, 65,0.05) 48%, rgba(65, 65, 65,0.05) 61%,rgba(232, 232, 232,0.05) 61%, rgba(232, 232, 232,0.05) 100%),linear-gradient(126deg, rgba(194, 194, 194,0.05) 0%, rgba(194, 194, 194,0.05) 11%,rgba(127, 127, 127,0.05) 11%, rgba(127, 127, 127,0.05) 33%,rgba(117, 117, 117,0.05) 33%, rgba(117, 117, 117,0.05) 99%,rgba(248, 248, 248,0.05) 99%, rgba(248, 248, 248,0.05) 100%),linear-gradient(144deg, rgba(64, 64, 64,0.05) 0%, rgba(64, 64, 64,0.05) 33%,rgba(211, 211, 211,0.05) 33%, rgba(211, 211, 211,0.05) 50%,rgba(53, 53, 53,0.05) 50%, rgba(53, 53, 53,0.05) 75%,rgba(144, 144, 144,0.05) 75%, rgba(144, 144, 144,0.05) 100%),linear-gradient(329deg, rgb(3,22,32),rgb(3,22,32));
+    color: #ffa500;
+}
+
+.navbar{
+    border-bottom: 1px solid #ffa500;
+}
+
+.navbar-expand-lg .navbar-nav .nav-link {
+    transition: color 0.3s, background-color 0.3s, box-shadow 0.3s;
+}
+
+.navbar-expand-lg .navbar-nav .nav-link:hover {
+    color: #031620;
+    background-color: #ffa500;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); /* Optional: Add a slight shadow */
+}
+
+.navbar-brand img {
+    height: 30px; 
+  }
+
+.image-container {
+    width: 500px;
+    height: 200px;
+}
+
+.image-container img {
+    width: 500px;
+    height: auto;
+    display: block;
+}
+
+.nav-link {
+    color:#ffa500;
+}
+
+
+header {
+    background-color: #ffa500;
+    color: #031620;
+    padding: 20px;
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+footer {
+    background-color: #ffa500;
+    color: #031620;
+    padding: 20px;
+    text-align: center;
+    font-size: 16px;
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+.button {
+    padding: 5px 4px;
+    font-size: 16px;
+    background-color: #ffa500;
+    color: #031620;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+    
+
+.card {
+    color: #031620;
+    /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); */
+    margin: 8px 4px; 
+    /* border: 2px solid #031620;  */
+    border-radius: 10px; 
+    background: #ffa500;
+    padding: 15px; 
+    width: 100%;
+}
+.button:hover {
+    background-color: #814a10;
+}
+
+.btnPrimaryA {
+    margin-top: 2%;
+    padding: 2%;
+    background-color: #031620;
+    border: 2px solid #ffa500;
+    border-radius: 20px;
+    align-items: center;
+    font-size: 20px;
+    color: #ffa500;
+}
+
+
+.inputErr {
+    color: #BA423C; 
+    background-color: #ffa500; 
+    padding-left: 35%; 
+    padding-right: 35%; 
+    padding-top: 10px; 
+    padding-bottom: 10px;
+}
