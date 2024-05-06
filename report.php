@@ -1,7 +1,8 @@
 <?php
 session_start();
     include 'connect.php';
-    $sql = "SELECT tblexercise.exerciseID, tblexercise.planid, tblworkoutplan.workoutplantype, tblexercise.exercisename, tblexercise.typeofexercise 
+    $sql = "SELECT tblexercise.exerciseID, tblexercise.planid, tblworkoutplan.workoutplantype, 
+    tblexercise.exercisename, tblexercise.typeofexercise 
     FROM tblworkoutplan 
     INNER JOIN tblexercise ON tblworkoutplan.planid = tblexercise.planid
     WHERE tblexercise.intensitylevel = 'Beginner'";
@@ -12,19 +13,21 @@ session_start();
     
     $resultset1 = mysqli_query($connection, $sql1);
 
-    $sql2 = "SELECT tblexercise.exerciseID, tblexercise.planid, tblworkoutplan.workoutplantype, tblexercise.exercisename, tblexercise.intensitylevel
+    $sql2 = "SELECT tblexercise.exerciseID, tblexercise.planid, tblworkoutplan.workoutplantype, 
+    tblexercise.exercisename, tblexercise.intensitylevel
     FROM tblworkoutplan 
     INNER JOIN tblexercise ON tblworkoutplan.planid = tblexercise.planid
     WHERE tblexercise.typeofexercise = 'Endurance'";
 
     $resultset2 = mysqli_query($connection, $sql2);
 
-    $sql3 = "SELECT tblexercise.exerciseID, tblexercise.planid, tblworkoutplan.workoutplantype, tblexercise.exercisename, tblexercise.intensitylevel
-    FROM tblworkoutplan 
+    $sql3 = "SELECT tblexercise.exerciseID, tblexercise.planid, tblworkoutplan.workoutplantype, 
+    tblexercise.exercisename, tblexercise.intensitylevel, tblexercise.typeofexercise
+    FROM tblworkoutplan
     INNER JOIN tblexercise ON tblworkoutplan.planid = tblexercise.planid
-    WHERE tblexercise.typeofexercise = 'Endurance'";
+    WHERE tblexercise.sets = 3 AND tblexercise.reps = 12";
 
-    $resultset3 = mysqli_query($connection, $sql2);
+    $resultset3 = mysqli_query($connection, $sql3);
    
 ?>
  
@@ -161,13 +164,14 @@ session_start();
         <table>
             <thead>
                 <tr>
-                    <th colspan="5" style="font-size: 30px; text-align:center;">Exercises with Beginner Intensity</th>
+                    <th colspan="6" style="font-size: 30px; text-align:center;">Exercises with 3 Sets and 12 Reps</th>
                 </tr>
                 <tr style="font-size: 25px">
                     <th style="width:10%;">ID</th>
                     <th style="width:10%;">Plan ID</th>
                     <th style="width:15%;">Workout Plan Type</th>
                     <th style="width:20%;">Exercise Name</th>
+                    <th style="width:20%;">Intensity Level</th>
                     <th style="width:20%;">Type of Exercise</th>
                 </tr>
             </thead>
@@ -181,6 +185,8 @@ session_start();
                     <td><?php echo $row['workoutplantype'] ?></td>
                     <td><?php echo $row['exercisename'] ?></td>
                     <td><?php echo $row['intensitylevel'] ?></td>
+                    <td><?php echo $row['typeofexercise'] ?></td>
+                    
                 </tr>
                 <?php endwhile;?>
             </tbody>
