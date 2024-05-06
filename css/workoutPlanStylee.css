@@ -91,13 +91,12 @@ th, td {
 .button {
     background-color: #031620;
     color: #ffa500;
-    padding: 15px;
+    padding: 25px;
     text-decoration: none;
     border-radius: 20px;
     border: none;
     cursor: pointer;
     transition: background-color 0.3s;
-    font-size: 22px;
+    font-size: 25px;
 }
-
 

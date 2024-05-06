@@ -1,18 +1,30 @@
 <?php
 session_start();
     include 'connect.php';
-    $sql = "SELECT tblexercise.planid, tblworkoutplan.workoutplantype, tblexercise.exercisename, tblexercise.typeofexercise 
+    $sql = "SELECT tblexercise.exerciseID, tblexercise.planid, tblworkoutplan.workoutplantype, tblexercise.exercisename, tblexercise.typeofexercise 
     FROM tblworkoutplan 
     INNER JOIN tblexercise ON tblworkoutplan.planid = tblexercise.planid
     WHERE tblexercise.intensitylevel = 'Beginner'";
+
     $resultset = mysqli_query($connection, $sql);
+
     $sql1 = "SELECT * FROM tblexercise";
+    
     $resultset1 = mysqli_query($connection, $sql1);
-    $sql2 = "SELECT tblexercise.planid, tblworkoutplan.workoutplantype, tblexercise.exercisename, tblexercise.typeofexercise 
+
+    $sql2 = "SELECT tblexercise.exerciseID, tblexercise.planid, tblworkoutplan.workoutplantype, tblexercise.exercisename, tblexercise.intensitylevel
     FROM tblworkoutplan 
     INNER JOIN tblexercise ON tblworkoutplan.planid = tblexercise.planid
     WHERE tblexercise.typeofexercise = 'Endurance'";
+
     $resultset2 = mysqli_query($connection, $sql2);
+
+    $sql3 = "SELECT tblexercise.exerciseID, tblexercise.planid, tblworkoutplan.workoutplantype, tblexercise.exercisename, tblexercise.intensitylevel
+    FROM tblworkoutplan 
+    INNER JOIN tblexercise ON tblworkoutplan.planid = tblexercise.planid
+    WHERE tblexercise.typeofexercise = 'Endurance'";
+
+    $resultset3 = mysqli_query($connection, $sql2);
    
 ?>
  
@@ -91,13 +103,14 @@ session_start();
         <table>
             <thead>
                 <tr>
-                    <th colspan="4" style="font-size: 30px; text-align:center;">Report of exercises with beginner intensity</th>
+                    <th colspan="5" style="font-size: 30px; text-align:center;">Exercises with Beginner Intensity</th>
                 </tr>
                 <tr style="font-size: 25px">
+                    <th style="width:10%;">ID</th>
                     <th style="width:10%;">Plan ID</th>
-                    <th style="width:10%;">Workout Plan Type</th>
-                    <th style="width:50%;">Exercise Name</th>
-                    <th style="width:15%;">Type of Exercise</th>
+                    <th style="width:15%;">Workout Plan Type</th>
+                    <th style="width:20%;">Exercise Name</th>
+                    <th style="width:20%;">Type of Exercise</th>
                 </tr>
             </thead>
             <tbody>
@@ -105,6 +118,7 @@ session_start();
                     while($row = $resultset->fetch_assoc()):
                 ?>
                 <tr>
+                    <td><?php echo $row['exerciseID'] ?></td>
                     <td><?php echo $row['planid'] ?></td>
                     <td><?php echo $row['workoutplantype'] ?></td>
                     <td><?php echo $row['exercisename'] ?></td>
@@ -118,13 +132,14 @@ session_start();
         <table>
             <thead>
                 <tr>
-                    <th colspan="4" style="font-size: 30px; text-align:center;">Report of exercises with endurance type</th>
+                    <th colspan="5" style="font-size: 30px; text-align:center;">Exercises with Endurance Type</th>
                 </tr>
                 <tr style="font-size: 25px">
+                    <th style="width:10%;">ID</th>
                     <th style="width:10%;">Plan ID</th>
-                    <th style="width:10%;">Workout Plan Type</th>
-                    <th style="width:50%;">Exercise Name</th>
-                    <th style="width:15%;">Type of Exercise</th>
+                    <th style="width:15%;">Workout Plan Type</th>
+                    <th style="width:20%;">Exercise Name</th>
+                    <th style="width:20%;">Intensity Level</th>
                 </tr>
             </thead>
             <tbody>
@@ -132,10 +147,40 @@ session_start();
                     while($row = $resultset2->fetch_assoc()):
                 ?>
                 <tr>
+                    <td><?php echo $row['exerciseID'] ?></td>
                     <td><?php echo $row['planid'] ?></td>
                     <td><?php echo $row['workoutplantype'] ?></td>
                     <td><?php echo $row['exercisename'] ?></td>
-                    <td><?php echo $row['typeofexercise'] ?></td>
+                    <td><?php echo $row['intensitylevel'] ?></td>
+                </tr>
+                <?php endwhile;?>
+            </tbody>
+        </table>
+    </div>
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <th colspan="5" style="font-size: 30px; text-align:center;">Exercises with Beginner Intensity</th>
+                </tr>
+                <tr style="font-size: 25px">
+                    <th style="width:10%;">ID</th>
+                    <th style="width:10%;">Plan ID</th>
+                    <th style="width:15%;">Workout Plan Type</th>
+                    <th style="width:20%;">Exercise Name</th>
+                    <th style="width:20%;">Type of Exercise</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php
+                    while($row = $resultset3->fetch_assoc()):
+                ?>
+                <tr>
+                    <td><?php echo $row['exerciseID'] ?></td>
+                    <td><?php echo $row['planid'] ?></td>
+                    <td><?php echo $row['workoutplantype'] ?></td>
+                    <td><?php echo $row['exercisename'] ?></td>
+                    <td><?php echo $row['intensitylevel'] ?></td>
                 </tr>
                 <?php endwhile;?>
             </tbody>
