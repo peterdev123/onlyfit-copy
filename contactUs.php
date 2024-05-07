@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no,viewport-fit=cover">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
    
-    <link href="css/contactUsStylee.css" rel="stylesheet">
+    <link href="css/contactUsStyle.css" rel="stylesheet">
     <script src="js/script.js"></script>
     <title>OnlyFit</title>
 </head>

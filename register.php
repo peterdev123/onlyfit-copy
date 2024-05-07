@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no,viewport-fit=cover">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/registerStylee.css" rel="stylesheet">
+    <link href="css/registerStyle.css" rel="stylesheet">
     <script src="js/script.js"></script>
     <title>OnlyFit</title>
 </head>
