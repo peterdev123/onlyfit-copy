@@ -82,19 +82,20 @@ $resultset1 = mysqli_query($connection, $sql1);
                    
                     <?php
                    
-                    $_SESSION['planid'] = $row['planid'];
+                    // $_SESSION['planid'] = $row['planid'];
                     ?>
                     <td class="td1">
                         <a href="updateWorkoutPlan.php?planid=<?php echo $row['planid']; ?>">Edit</a>
                         <form method="post" style="display: inline;">
+                            <input type="hidden" name="plannedid" value="<?php echo $row['planid']; ?>">
                             <button type="submit" class="btnPrimaryA" name="btnDelete" style="width: 100px;">Delete</button>
                         </form>
                     </td>
                 </tr>
                 <?php
                 if(isset($_POST['btnDelete'])){
-                    $planid = $_POST['planid'];
-                    
+                    $planid = $_POST['plannedid'];
+                    echo $planid;
                   
                     $updatePlanQuery = "UPDATE tblworkoutplan SET isDelete = 1 WHERE planid = '$planid'";
                     mysqli_query($connection, $updatePlanQuery);
