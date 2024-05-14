@@ -137,7 +137,7 @@
                         <th class="th1">Sets</th>
                         <th class="th1">Reps</th>
                         <th class="th1">Type</th>
-                        <th class="th1">Edit/Delete</th>
+                        <th class="th1">Delete?</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -152,7 +152,6 @@
                         <td class="th1"><?php echo $row1['reps'] ?></td>
                         <td class="th1"><?php echo $row1['typeofexercise'] ?></td>
                         <td class="th1">
-                            <a href="updateExercise.php?exerciseID=<?php echo $row1['exerciseID']; ?>">Edit</a>
                             <form method="post" style="display: inline;">
                                 <input type="hidden" name="deleteExerciseID" value="<?php echo $row1['exerciseID']; ?>">
                                 <button type="submit" name="btnDelete" style="width: 116px;">Delete</button>
