@@ -8,11 +8,13 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
    
     <link href="css/contactUsStyle.css" rel="stylesheet">
+    <link href="css/generalStyle.css" rel="stylesheet">
+
     <script src="js/script.js"></script>
     <title>OnlyFit</title>
 </head>
 <body>
-    <header>ONLYFIT</header>
+    <!-- <header>ONLYFIT</header>
     <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container" style="font-size: 22px; font-weight: bold">
           <a class="navbar-brand" href="#">
@@ -34,7 +36,18 @@
             </li>
           </ul>
         </div>
-    </nav>
+    </nav> -->
+    <header>
+        <table class="table1">
+          <tr">
+            <td class="thTitle" colspan="7">OnlyFit</td>
+            <th class="thData"><a class="nav-link" href="index.php">Home</a></th>
+            <th class="thData"><a class="nav-link" href="register.php#registrationForm">Register</a></th>
+            <th class="thData"><a class="nav-link" href="login.php#LogCard">Login</a></th>
+            <th class="thData"><a class="nav-link" href="aboutUs.php">About Us</a></th>
+          </tr>
+        </table>
+      </header>
 
     <div class="otherbody">
 <div class = "container2">

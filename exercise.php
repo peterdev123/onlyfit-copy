@@ -15,10 +15,12 @@
     <title>OnlyFit</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link href="css/exerciseStyle.css" rel="stylesheet">
+    <link href="css/generalStyle.css" rel="stylesheet">
+
     <script src="js/script.js"></script>
 </head>
 <body>
-    <header>OnlyFit</header>
+    <!-- <header>OnlyFit</header>
     <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container" style="font-size: 22px; font-weight: bold">
           <a class="navbar-brand" href="#">
@@ -39,37 +41,57 @@
               <a class="nav-link" href="contactUs.php">Contact Us</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="workoutPlans.php">Workout Plans</a>
+              <a class="nav-link" href="index.php">Go Back Home</a>
             </li>
           </ul>
         </div>
-    </nav>
+    </nav> -->
+    <header>
+        <table class="table1">
+          <tr>
+            <td class="thTitle" colspan="7">OnlyFit</td>
+            <th class="thData"><a class="nav-link" href="index.php">Home</a></th>
+            <th class="thData"><a class="nav-link" href="register.php#registrationForm">Register</a></th>
+            <th class="thData"><a class="nav-link" href="login.php#LogCard">Login</a></th>
+            <th class="thData"><a class="nav-link" href="aboutUs.php">About Us</a></th>
+            <th class="thData"><a class="nav-link" href="contactUs.php">Contact Us</a></th>
+          </tr>
+        </table>
+      </header>
     <br>
     <br>
     <form method="post">
-        <table>
+    <input type="hidden" name="isDeleted" value="0">    
+        <table class="table2">
             <tr>
-                <th colspan="2" style="text-align: center; font-size: 35px;">Exercise</th>
+                 <input type="hidden" name="isDeleted" value="0">
+                <th class="th1" colspan="2" style="text-align: center; font-size: 35px;">Exercise</th>
             </tr>
             <tr>
-                <td>Exercise name: </td>
-                <td><input type="text" class="form-control" id="exercise" name="exercise" placeholder="Enter exercise name" required></td>
+                <td class="td1">Exercise name: </td>
+                <td class="td1"><input type="text" class="form-control" id="exercise" name="exercise" placeholder="Enter exercise name" required></td>
             </tr>
             <tr>
-                <td>Intensity Level: </td>
-                <td><input type="text" class="form-control" id="intensity" name="intensity" placeholder="Enter intensity level (e.g Beginner)" required></td>
+                <td class="td1">Intensity Level: </td>
+                <td class="td1"><select class="form-control" id="intensity" name="intensity" required>
+                        <option value="">Select Intensity Level</option>
+                        <option value="Beginner">Beginner</option>
+                        <option value="Moderate">Moderate</option>
+                        <option value="Advanced">Advanced</option>
+                    </select>
+                </td>
             </tr>
             <tr>
-                <td>Sets: </td>
-                <td><input type="number" class="form-control" id="sets" name="sets" placeholder="Enter no. of sets" required></td>
+                <td class="td1">Sets: </td>
+                <td class="td1"><input type="number" class="form-control" id="sets" name="sets" placeholder="Enter no. of sets" required></td>
             </tr>
             <tr>
-                <td>Reps: </td>
-                <td><input type="number" class="form-control" id="reps" name="reps" placeholder="Enter no. of reps" required></td>
+                <td class="td1">Reps: </td>
+                <td class="td1"><input type="number" class="form-control" id="reps" name="reps" placeholder="Enter no. of reps" required></td>
             </tr>
             <tr>
-                <td>Type of Exercise: </td>
-                <td><select class="form-control" id="typeExercise" name="typeExercise" required>
+                <td class="td1">Type of Exercise: </td>
+                <td class="td1"><select class="form-control" id="typeExercise" name="typeExercise" required>
                         <option value="">Select type of exercise</option>
                         <option value="Endurance">Endurance</option>
                         <option value="Strength">Strength</option>
@@ -79,7 +101,7 @@
                 </td>
             </tr>
             <tr>
-                <td colspan="2"><button type="submit" name="btnSave">Save Exercise & Add Another</button></td>
+                <td class="td1" colspan="2"><button type="submit" name="btnSave">Save Exercise & Add Another</button></td>
             </tr>
         </table>
     </form>
@@ -92,8 +114,8 @@
         $sets = $_POST['sets'];		
         $reps = $_POST['reps'];
         $type = $_POST['typeExercise'];
-        
-        $sql = "INSERT INTO tblexercise(planid, exercisename, intensitylevel, sets, reps, typeofexercise) VALUES('$planid', '".$ename."', '".$intensity."', '$sets', '$reps', '".$type."')";
+        $isDeleted = 0;
+        $sql = "INSERT INTO tblexercise(planid, exercisename, intensitylevel, sets, reps, typeofexercise, isDeleted) VALUES('$planid', '".$ename."', '".$intensity."', '$sets', '$reps', '".$type."', $isDeleted)";
         mysqli_query($connection, $sql);
 
         echo "<script>
@@ -106,16 +128,16 @@
     <br>
     <div>
         <form method="post">
-            <table>
+            <table class="table2">
                 <thead>
                     <tr>
-                        <th>ID</th>
-                        <th>Exercise name</th>
-                        <th>Intensity</th>
-                        <th>Sets</th>
-                        <th>Reps</th>
-                        <th>Type</th>
-                        <th>Edit/Delete</th>
+                        <th class="th1">ID</th>
+                        <th class="th1">Exercise name</th>
+                        <th class="th1">Intensity</th>
+                        <th class="th1">Sets</th>
+                        <th class="th1">Reps</th>
+                        <th class="th1">Type</th>
+                        <th class="th1">Edit/Delete</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -123,13 +145,13 @@
                         while($row1 = mysqli_fetch_assoc($resultset1)):
                     ?>
                     <tr>
-                        <td><?php echo $row1['exerciseID'] ?></td>
-                        <td><?php echo $row1['exercisename'] ?></td>
-                        <td><?php echo $row1['intensitylevel'] ?></td>
-                        <td><?php echo $row1['sets'] ?></td>
-                        <td><?php echo $row1['reps'] ?></td>
-                        <td><?php echo $row1['typeofexercise'] ?></td>
-                        <td>
+                        <td class="th1"><?php echo $row1['exerciseID'] ?></td>
+                        <td class="th1"><?php echo $row1['exercisename'] ?></td>
+                        <td class="th1"><?php echo $row1['intensitylevel'] ?></td>
+                        <td class="th1"><?php echo $row1['sets'] ?></td>
+                        <td class="th1"><?php echo $row1['reps'] ?></td>
+                        <td class="th1"><?php echo $row1['typeofexercise'] ?></td>
+                        <td class="th1">
                             <a href="updateExercise.php?exerciseID=<?php echo $row1['exerciseID']; ?>">Edit</a>
                             <form method="post" style="display: inline;">
                                 <input type="hidden" name="deleteExerciseID" value="<?php echo $row1['exerciseID']; ?>">
@@ -139,7 +161,7 @@
                     </tr>
                     <?php endwhile;?>
                     <tr>
-                        <td colspan="7"><button type="submit" name="btnSubmit">Save All</button></td>
+                        <td class="th1" colspan="7"><button type="submit" name="btnSubmit">Save All</button></td>
                     </tr>
                 </tbody>
             </table>

@@ -69,3 +69,13 @@ function showPopupMessage2(message) {
 
     document.body.appendChild(popup);
 }
+
+function showConfirmation() {
+    document.getElementById("submitButtonRow").style.display = "none";
+    document.getElementById("confirmationSection").style.display = "table-row";
+}
+
+function hideConfirmation() {
+    document.getElementById("submitButtonRow").style.display = "table-row";
+    document.getElementById("confirmationSection").style.display = "none";
+}

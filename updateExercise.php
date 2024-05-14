@@ -16,10 +16,11 @@
     <title>OnlyFit</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link href="css/customPlanStyle.css" rel="stylesheet">
+    <link href="css/generalStyle.css" rel="stylesheet">
     <script src="js/script.js"></script>
 </head>
 <body>
-    <header>OnlyFit</header>
+    <!-- <header>OnlyFit</header>
     <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container" style="font-size: 22px; font-weight: bold">
           <a class="navbar-brand" href="#">
@@ -44,7 +45,19 @@
             </li>
           </ul>
         </div>
-    </nav>
+    </nav> -->
+    <header>
+        <table class="table1">
+          <tr>
+            <td class="thTitle" colspan="7">OnlyFit</td>
+            <th class="thData"><a class="nav-link" href="index.php">Home</a></th>
+            <th class="thData"><a class="nav-link" href="register.php#registrationForm">Register</a></th>
+            <th class="thData"><a class="nav-link" href="login.php#LogCard">Login</a></th>
+            <th class="thData"><a class="nav-link" href="aboutUs.php">About Us</a></th>
+            <th class="thData"><a class="nav-link" href="contactUs.php">Contact Us</a></th>
+          </tr>
+        </table>
+      </header>
     <br>
     <br>
     <br>
@@ -52,33 +65,44 @@
         $row = mysqli_fetch_assoc($resultset);
     ?>
     <form method="post">
-        <table>
+        <table class="table2">
             <tr>
-                <th colspan="2" style="text-align: center; font-size: 35px;">Custom Workout Plan</th>
+                <th class="th1" colspan="2" style="text-align: center; font-size: 35px;">Custom Workout Plan</th>
             </tr>
             <tr>
-                <td>Exercise Name: </td>
-                <td><input type="text" class="form-control" id="exercisenamechange" name="exercisenamechange" value="<?php echo $row['exercisename']?>" required></td>
+                <td class="td1">Exercise Name: </td>
+                <td class="td1"><input type="text" class="form-control" id="exercisenamechange" name="exercisenamechange" value="<?php echo $row['exercisename']?>" required></td>
             </tr>
             <tr>
-                <td>Intensity Level: </td>
-                <td><input type="text" class="form-control" id="intensitylevelchange" name="intensitylevelchange" value="<?php echo $row['intensitylevel']?>" required></td>
+                <td class="td1">Intensity Level: </td>
+                <td class="td1"><input type="text" class="form-control" id="intensitylevelchange" name="intensitylevelchange" value="<?php echo $row['intensitylevel']?>" required></td>
             </tr>
             <tr>
-                <td>Sets: </td>
-                <td><input type="text" class="form-control" id="setschange" name="setschange" value="<?php echo $row['sets']?>" required></td>
+                <td class="td1">Sets: </td>
+                <td class="td1"><input type="text" class="form-control" id="setschange" name="setschange" value="<?php echo $row['sets']?>" required></td>
             </tr>
             <tr>
-                <td>Reps: </td>
-                <td><input type="text" class="form-control" id="repschange" name="repschange" value="<?php echo $row['reps']?>" required></td>
+                <td class="td1">Reps: </td>
+                <td class="td1"><input type="text" class="form-control" id="repschange" name="repschange" value="<?php echo $row['reps']?>" required></td>
             </tr>
             <tr>
-                <td>Type of Exercise: </td>
-                <td><input type="text" class="form-control" id="typeofexercisechange" name="typeofexercisechange" value="<?php echo $row['typeofexercise']; ?>" required></td>
+                <td class="td1">Type of Exercise: </td>
+                <td class="td1"><input type="text" class="form-control" id="typeofexercisechange" name="typeofexercisechange" value="<?php echo $row['typeofexercise']; ?>" required></td>
             </tr>
             
-            <tr> 
-                <td colspan = "2"style="border-right: none; border-bottom: none;"><button type="submit" name="btnSubmit">Submit</button></td>
+            <tr id="confirmationSection" style="display: none;">
+                <td class="td1" colspan="2">
+                    Are you sure the data is confirmed? 
+                    <br>
+                    <br>
+                    <button type="submit" name="btnSubmit">YES</button>
+                    <button type="button" onclick="hideConfirmation()">NO</button>
+                </td>
+            </tr>
+            <tr id="submitButtonRow">
+                <td class="td1" colspan="2" style="border-right: none; border-bottom: none;">
+                    <button type="button" onclick="showConfirmation()">Submit</button>
+                </td>
             </tr>
         </table>
     </form>
@@ -108,7 +132,7 @@ if(isset($_POST['btnSubmit'])){
     $result = mysqli_query($connection, $sql);
 
     if($result) {
-        echo "<script>window.location.href = 'exercise.php'</script>";
+        echo "<script>window.location.href = 'workoutPlans.php'</script>";
         exit();
     }
 

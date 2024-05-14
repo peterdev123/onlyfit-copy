@@ -13,7 +13,7 @@
     <link href="css/indexStyle.css" rel="stylesheet">
 </head>
 <body>
-    <header>OnlyFit</header>
+    <!-- <header>OnlyFit</header>
     <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container" style="font-size: 22px; font-weight: bold">
           <a class="navbar-brand" href="#">
@@ -38,7 +38,19 @@
             </li>
           </ul>
         </div>
-      </nav>
+      </nav> -->
+      <header>
+        <table style="margin-right: 50px">
+          <tr">
+            <td class="thTitle" colspan="7">OnlyFit</td>
+            <th class="thData"><a class="nav-link" href="register.php#registrationForm">Register</a></th>
+            <th class="thData"><a class="nav-link" href="login.php#LogCard">Login</a></th>
+            <th class="thData"><a class="nav-link" href="aboutUs.php">About Us</a></th>
+            <th class="thData"><a class="nav-link" href="contactUs.php">Contact Us</a></th>
+            <th class="thData"><a class="nav-link" href="workoutPlans.php">Workout Plans</a></th>
+          </tr>
+        </table>
+      </header>
       <section class="hero">
         <div class="container">
             <div class="hero-content">
@@ -55,7 +67,8 @@
       </section>
       <br>
       <br>
-      <a href="report.php" class="button" style="margin: 45%" >REPORT</a>
+      <h1 class="hOne">READ REPORTS</h1>
+      <a href="report.php" class="button" style="margin: 45%;" >Dashboard</a>
       <br>
       <br>
       <br>

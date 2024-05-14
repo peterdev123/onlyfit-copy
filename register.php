@@ -7,11 +7,12 @@
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no,viewport-fit=cover">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="css/registerStyle.css" rel="stylesheet">
+    <link href="css/generalStyle.css" rel="stylesheet">
     <script src="js/script.js"></script>
     <title>OnlyFit</title>
 </head>
 <body>
-    <header>ONLYFIT</header>
+    <!-- <header>ONLYFIT</header>
     <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container" style="font-size: 22px; font-weight: bold">
             <a class="navbar-brand" href="#">
@@ -33,7 +34,19 @@
                 </li>
             </ul>
         </div>
-    </nav>
+    </nav> -->
+    <header>
+        <table class="table1">
+          <tr>
+            <td class="thTitle" colspan="7">OnlyFit</td>
+            <th class="thData"><a class="nav-link" href="index.php">Home</a></th>
+            <th class="thData"><a class="nav-link" href="login.php#LogCard">Login</a></th>
+            <th class="thData"><a class="nav-link" href="aboutUs.php">About Us</a></th>
+            <th class="thData"><a class="nav-link" href="contactUs.php">Contact Us</a></th>
+            <th class="thData"><a class="nav-link" href="workoutPlans.php">Workout Plans</a></th>
+          </tr>
+        </table>
+      </header>
 
       
     <div class="container d-flex justify-content-center align-items-center" style="height: 100vh;">

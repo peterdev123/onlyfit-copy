@@ -12,10 +12,12 @@ $resultset = mysqli_query($connection, $sql);
     <title>OnlyFit</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link href="css/plan.css" rel="stylesheet">
+    <link href="css/generalStyle.css" rel="stylesheet">
+    
     <script src="js/script.js"></script>
 </head>
 <body>
-    <header>OnlyFit</header>
+    <!-- <header>OnlyFit</header>
     <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container" style="font-size: 22px; font-weight: bold">
           <a class="navbar-brand" href="#">
@@ -40,7 +42,19 @@ $resultset = mysqli_query($connection, $sql);
             </li>
           </ul>
         </div>
-    </nav>
+    </nav> -->
+    <header>
+        <table class="table1">
+          <tr>
+            <td class="thTitle" colspan="7">OnlyFit</td>
+            <th class="thData"><a class="nav-link" href="index.php">Home</a></th>
+            <th class="thData"><a class="nav-link" href="register.php#registrationForm">Register</a></th>
+            <th class="thData"><a class="nav-link" href="login.php#LogCard">Login</a></th>
+            <th class="thData"><a class="nav-link" href="aboutUs.php">About Us</a></th>
+            <th class="thData"><a class="nav-link" href="contactUs.php">Contact Us</a></th>
+          </tr>
+        </table>
+      </header>
     <br>
     <br>
     <br>
@@ -55,8 +69,9 @@ $resultset = mysqli_query($connection, $sql);
         <img src="images\pushPlan.jpg" width="75%" height="75%" alt="samplepush">
         
         <form action="" method="post">
-            <input type="hidden" name="workoutdesciprtion" value="Push Day: It's time to target those upper body muscles with a high-intensity workout focused on pushing movements. Engage your chest, shoulders, and triceps as you press, lift, and push your way to strength and definition. The exercises in these will usually involve pushing movements using your chest, triceps, shoulders.">
+            <input type="hidden" name="workoutdesciprtion" value="Push Day: It is time to target those upper body muscles with a high-intensity workout focused on pushing movements. Engage your chest, shoulders, and triceps as you press, lift, and push your way to strength and definition. The exercises in these will usually involve pushing movements using your chest, triceps, shoulders.">
             <input type="hidden" name="workouttype" value="push">
+            <input type="hidden" name="isDelete" value="0">
             <button type="submit" name="btnRegister" class="btnPrimaryA">Create Push Workout Plan</button>
         </form>
       </div>
@@ -79,9 +94,10 @@ $resultset = mysqli_query($connection, $sql);
     if(isset($_POST['btnRegister'])){
         $workoutplandescription = mysqli_real_escape_string($connection, $_POST['workoutdesciprtion']);     
         $workoutplantype = mysqli_real_escape_string($connection, $_POST['workouttype']);
-        $sql = "INSERT INTO tblworkoutplan(workoutplandescription, workoutplantype) VALUES(?, ?)";
+        $isDelete = 0;
+        $sql = "INSERT INTO tblworkoutplan(workoutplandescription, workoutplantype, isDelete) VALUES(?, ?, ?)";
         $stmt = mysqli_prepare($connection, $sql);
-        mysqli_stmt_bind_param($stmt, "ss", $workoutplandescription, $workoutplantype);
+        mysqli_stmt_bind_param($stmt, "ssi", $workoutplandescription, $workoutplantype, $isDelete);
         mysqli_stmt_execute($stmt);
         echo "<script>
               window.location.href = 'exercise.php'</script>";
