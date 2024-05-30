@@ -65,7 +65,7 @@ $resultset1 = mysqli_query($connection, $sql1);
                     <th class="th1" colspan="4" style="font-size: 30px; text-align:center;">List of Workout Plans</th>
                 </tr>
                 <tr style="font-size: 25px">
-                    <th class="th1" style="width:10%;">Plan ID</th>
+                   
                     <th class="th1" style="width:10%;">Workout Plan Type</th>
                     <th class="th1" style="width:50%;">Workout Plan Description</th>
                     <th class="th1" style="width:15%;">Edit/Delete</th>
@@ -76,7 +76,7 @@ $resultset1 = mysqli_query($connection, $sql1);
                 while($row = $resultset->fetch_assoc()):
                 ?>
                 <tr>
-                    <td class="td1"><?php echo $row['planid'] ?></td>
+                
                     <td class="td1"><?php echo $row['workoutplantype'] ?></td>
                     <td class="td1"><?php echo $row['workoutplandescription'] ?></td>
                    
@@ -121,8 +121,7 @@ $resultset1 = mysqli_query($connection, $sql1);
                     <th class="th1" colspan="8" style="font-size: 30px; text-align:center;">List of Exercises</th>
                 </tr>
                 <tr style="font-size: 25px">
-                    <th class="th1" style="width: 8%">ID</th>
-                    <th class="th1" style="width: 8%">Plan ID</th>
+                   
                     <th class="th1" style="width: 15%">Exercise name</th>
                     <th class="th1" style="width: 12%">Intensity</th>
                     <th class="th1" style="width: 8%">Sets</th>
@@ -136,8 +135,6 @@ $resultset1 = mysqli_query($connection, $sql1);
                 while($row1 = mysqli_fetch_assoc($resultset1)):
                 ?>
                 <tr>
-                    <td class="td1"><?php echo $row1['exerciseID'] ?></td>
-                    <td class="td1"><?php echo $row1['planid'] ?></td>
                     <td class="td1"><?php echo $row1['exercisename'] ?></td>
                     <td class="td1"><?php echo $row1['intensitylevel'] ?></td>
                     <td class="td1"><?php echo $row1['sets'] ?></td>

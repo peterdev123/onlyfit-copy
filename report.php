@@ -353,7 +353,7 @@ session_start();
     </div>  
 </div>  
 <hr>
-<div class="statistics-chart">
+<!-- <div class="statistics-chart">
     <h2 style="color: #000000; font-size: 40px; border-bottom: 2px solid #000000;">BAR CHART FOR WORKOUT PLANS</h2>
     <div class="chart">
         <div class="bar push" style="height: 690px; color: #000000;">Push: 69</div>
@@ -362,7 +362,8 @@ session_start();
         <div class="bar calisthenics" style="height: 330px; color: #000000;">Calisthenics: 33</div>
         <div class="bar custom" style="height: 110px; color: #000000;">Custom Plans: 11</div>
     </div>
-</div>
+</div> -->
+<img src="images\STATS.png" width="75%" height="75%" style="margin-left: 12.5%;" alt="samplepush">
 <br>
 <br>
 <br>

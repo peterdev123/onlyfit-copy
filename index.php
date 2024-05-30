@@ -48,6 +48,7 @@
             <th class="thData"><a class="nav-link" href="aboutUs.php">About Us</a></th>
             <th class="thData"><a class="nav-link" href="contactUs.php">Contact Us</a></th>
             <th class="thData"><a class="nav-link" href="workoutPlans.php">Workout Plans</a></th>
+            <th class="thData"><a class="nav-link" href="report.php">Reports</a></th>
           </tr>
         </table>
       </header>
@@ -65,14 +66,14 @@
             </div>
         </div>
       </section>
-      <br>
+      <!-- <br>
       <br>
       <h1 class="hOne">READ REPORTS</h1>
       <a href="report.php" class="button" style="margin: 45%;" >Dashboard</a>
       <br>
       <br>
       <br>
-      <br>
+      <br> -->
     <footer>
         <p>Peter Sylvan L. Vecina | Kyle T. Vasquez</p>
         <p>Bachelor of Computer Science | Year 2</p>
